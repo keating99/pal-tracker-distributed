@@ -2,7 +2,7 @@ applications:
 - name: tracker-allocations
   path: ./applications/allocations-server/build/libs/allocations-server.jar
   routes:
-  - route: pal-tracker-distro-trevor-allocations cfapps.io
+  - route: pal-tracker-distro-trevor-allocations-cfapps.io
   memory: 512M
   instances: 1
   env:
