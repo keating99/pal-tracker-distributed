@@ -9,7 +9,7 @@ stages:
   - deploy
   - migrate
 if: tag IS blank
-  ​
+
 jobs:
   include:
     - stage: build and publish
@@ -35,7 +35,7 @@ jobs:
         file:
           - "applications/${APPLICATION}-server/build/libs/${APPLICATION}-server.jar"
         skip_cleanup: true
-  ​
+
     - stage: build and publish
       language: java
       jdk: openjdk11
@@ -55,7 +55,7 @@ jobs:
         - git tag -f $RELEASE_TAG
       deploy:
         <<: *github
-      ​
+
     - stage: build and publish
       language: java
       jdk: openjdk11
@@ -75,7 +75,7 @@ jobs:
         - git tag -f $RELEASE_TAG
       deploy:
         <<: *github
-      ​
+
     - stage: build and publish
       language: java
       jdk: openjdk11
@@ -83,7 +83,6 @@ jobs:
         mariadb: '10.2'
       install: skip
       before_script:
-        - chmod a+x gradlew
         - mysql -uroot < databases/create_databases.sql
         - ./gradlew testMigrate
       script:
@@ -95,7 +94,7 @@ jobs:
         - git tag -f $RELEASE_TAG
       deploy:
         <<: *github
-      ​
+
     - stage: deploy
       language: bash
       script:
