@@ -20,7 +20,6 @@ jobs:
       install: skip
       before_script:
         - chmod +x gradlew
-        - chmod +x databases/migrate-databases.sh
       script:
         - APPLICATION=allocations
         - ./gradlew clean :applications:${APPLICATION}-server:build
