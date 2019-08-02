@@ -2,7 +2,7 @@ applications:
 - name: tracker-timesheets
   path: ./applications/timesheets-server/build/libs/timesheets-server.jar
   routes:
-  - route: pal-tracker-distro-trevor-timesheets-cfapps.io
+  - route: pal-tracker-distro-trevor-timesheets.cfapps.io
   memory: 512M
   instances: 1
   env:

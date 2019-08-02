@@ -2,7 +2,7 @@ applications:
 - name: tracker-registration
   path: ./applications/registration-server/build/libs/registration-server.jar
   routes:
-  - route: pal-tracker-distro-trevor-registration-cfapps.io
+  - route: pal-tracker-distro-trevor-registration.cfapps.io
   memory: 512M
   instances: 1
   env:
