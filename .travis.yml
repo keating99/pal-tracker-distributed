@@ -9,7 +9,7 @@ stages:
   - deploy
   - migrate
 if: tag IS blank
-
+  ​
 jobs:
   include:
     - stage: build and publish
@@ -35,7 +35,7 @@ jobs:
         file:
           - "applications/${APPLICATION}-server/build/libs/${APPLICATION}-server.jar"
         skip_cleanup: true
-
+  ​
     - stage: build and publish
       language: java
       jdk: openjdk11
@@ -55,7 +55,7 @@ jobs:
         - git tag -f $RELEASE_TAG
       deploy:
         <<: *github
-
+      ​
     - stage: build and publish
       language: java
       jdk: openjdk11
@@ -75,7 +75,7 @@ jobs:
         - git tag -f $RELEASE_TAG
       deploy:
         <<: *github
-
+      ​
     - stage: build and publish
       language: java
       jdk: openjdk11
@@ -95,7 +95,7 @@ jobs:
         - git tag -f $RELEASE_TAG
       deploy:
         <<: *github
-
+      ​
     - stage: deploy
       language: bash
       script:
@@ -144,7 +144,7 @@ jobs:
     - stage: migrate
       language: java
       before_install:
-        - chmod +x gradle
+        - chmod +x gradlew
         - wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
         - echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
         - sudo apt-get update
